@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Tracker - AUREX Week 4</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  
+  <header class="app-header">
+    <div class="header-content">
+      <h1>Task Tracker Pro</h1>
+      <p>Organize, plan, and accomplish your daily targets</p>
+    </div>
+  </header>
+
+  <main class="main-container">
+    
+  
+    <section class="action-card">
+      <h2>Create New Task</h2>
+      <form id="task-form" class="task-form">
+        <div class="input-wrapper">
+          <input type="text" id="task-input" placeholder="What needs to be done?" autocomplete="off">
+          <button type="submit" class="btn-primary">Add Task</button>
+        </div>
+      </form>
+      <p id="status-msg" class="status-msg"></p>
+    </section>
+
+   
+    <section class="action-card">
+      <div class="card-header">
+        <h2>My Task List</h2>
+        <div class="filter-group">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="active">Active</button>
+          <button class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+      </div>
+
+     
+      <div id="task-container" class="task-container"></div>
+      <p id="empty-state" class="empty-state">No tasks available right now.</p>
+    </section>
+
+  </main>
+
+  
+  <footer class="app-footer">
+    <p>AUREX Full-Stack Engineering Internship — Week 4</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

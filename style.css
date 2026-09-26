@@ -1,0 +1,289 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+  background-color: #0f0a15; /* Dark background */
+  color: #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header Section - Black & Dark Purple Gradient */
+.app-header {
+  background: linear-gradient(135deg, #12091f 0%, #2a1147 50%, #4c1d95 100%);
+  color: #ffffff;
+  padding: 3.5rem 1.5rem 4.5rem 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid #3b0764;
+  box-shadow: 0 4px 25px rgba(76, 29, 149, 0.3);
+}
+
+.header-content h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.4rem;
+  color: #ffffff;
+}
+
+.header-content p {
+  font-size: 1.1rem;
+  color: #c084fc; /* Light purple accent */
+}
+
+/* Main Container */
+.main-container {
+  width: 100%;
+  max-width: 820px;
+  margin: -2.5rem auto 3rem auto;
+  padding: 0 1.25rem;
+  flex: 1;
+}
+
+.action-card {
+  background: #181124; /* Dark purple/black card */
+  padding: 2rem;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  margin-bottom: 1.8rem;
+  border: 1px solid #2e1a47;
+}
+
+.action-card h2 {
+  font-size: 1.4rem;
+  color: #f3e8ff;
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+}
+
+/* Form Styles */
+.input-wrapper {
+  display: flex;
+  gap: 12px;
+}
+
+.input-wrapper input {
+  flex: 1;
+  padding: 0.85rem 1.2rem;
+  border: 1.5px solid #3b2161;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  outline: none;
+  transition: all 0.2s ease;
+  background-color: #0f0a15;
+  color: #ffffff;
+}
+
+.input-wrapper input::placeholder {
+  color: #f1edf5;
+  opacity: 0.8;
+}
+
+.input-wrapper input:focus {
+  border-color: #a855f7;
+  box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.2);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #6b21a8, #7e22ce);
+  color: #ffffff;
+  border: none;
+  padding: 0.85rem 1.8rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(126, 34, 206, 0.3);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #7e22ce, #9333ea);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Status Messages */
+.status-msg {
+  font-size: 0.95rem;
+  margin-top: 0.75rem;
+  font-weight: 500;
+  display: none;
+}
+
+.status-msg.error {
+  color: #f87171;
+}
+
+.status-msg.success {
+  color: #4ade80;
+}
+
+/* Filters Header */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.card-header h2 {
+  margin-bottom: 0;
+}
+
+.filter-group {
+  display: flex;
+  gap: 8px;
+}
+
+.filter-btn {
+  background: #25143b;
+  border: 1px solid #3b2161;
+  padding: 0.45rem 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #d8b4fe;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  background: #3b2161;
+  color: #ffffff;
+}
+
+.filter-btn.active {
+  background-color: #7e22ce;
+  color: #ffffff;
+  border-color: #a855f7;
+}
+
+/* Task Cards Container */
+.task-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Individual Task Card - White background like screenshot */
+.task-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 1.1rem 1.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.25s ease;
+  animation: slideDown 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.task-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.task-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1e1b4b; /* Dark indigo text for contrast on white background */
+  word-break: break-word;
+}
+
+.task-card.is-completed {
+  background-color: #f3f4f6;
+  opacity: 0.75;
+}
+
+.task-card.is-completed .task-title {
+  text-decoration: line-through;
+  color: #6b7280;
+}
+
+/* Action Buttons inside Task */
+.task-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.action-btn {
+  border: none;
+  padding: 0.55rem 1.1rem;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-complete {
+  background-color: #16a34a;
+  color: #ffffff;
+}
+
+.btn-complete:hover {
+  background-color: #15803d;
+}
+
+.btn-edit {
+  background-color: #eab308;
+  color: #ffffff;
+}
+
+.btn-edit:hover {
+  background-color: #ca8a04;
+}
+
+.btn-delete {
+  background-color: #dc2626;
+  color: #ffffff;
+}
+
+.btn-delete:hover {
+  background-color: #b91c1c;
+}
+
+.action-btn:active {
+  transform: scale(0.95);
+}
+
+.empty-state {
+  color: #a855f7;
+  font-size: 1rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* Animations */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Footer */
+.app-footer {
+  background-color: #09050d;
+  color: #a855f7;
+  text-align: center;
+  padding: 1.25rem;
+  font-size: 0.9rem;
+  margin-top: auto;
+  border-top: 1px solid #1a0b2e;
+}
